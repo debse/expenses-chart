@@ -37,6 +37,8 @@ main {
   width: min(95%, 25rem);
 }
 
+/* BALANCE SECTION */
+
 .balance {
   color: var(--clr-neutral-orange);
   background-color: var(--clr-primary-red);
@@ -61,4 +63,55 @@ main {
 
 .balance img {
   height: 32px;
+}
+
+/* CARD SECTION */
+
+.card {
+  background-color: var(--clr-neutral-orange);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* CARD HEADER */
+
+.card .header h2 {
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+/* CARD CHART */
+
+/* CARD FOOTER */
+
+.card .footer {
+  border-top: 1px solid var(--cream);
+  padding-top: 20px;
+}
+
+.card .footer h3 {
+  font-weight: var(--fw-normal);
+  font-size: 0.75em;
+  color: var(--clr-neutral-brown-medium);
+}
+
+.card .footer .details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card .footer .details .total {
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+.card .footer .details .difference {
+  font-size: 0.75em;
+  text-align: right;
+  color: var(--clr-neutral-brown-medium);
+}
+
+.card .footer .details .difference .percentage {
+  font-weight: var(--fw-bold);
+  color: var(--clr-neutral-brown-dark);
 }
