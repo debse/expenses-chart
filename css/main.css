@@ -1,6 +1,8 @@
 :root {
   --clr-primary-red: hsl(10, 79%, 65%);
+  --clr-primary-red-active: hsl(10, 100%, 76%);
   --clr-primary-cyan: hsl(186, 34%, 60%);
+  --clr-primary-cyan-active: hsl(187, 49%, 80%);
   --clr-neutral-cream: hsl(27, 66%, 92%);
   --clr-neutral-orange: hsl(33, 100%, 98%);
   --clr-neutral-brown-dark: hsl(25, 47%, 15%);
@@ -19,6 +21,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: var(--ff-primary);
   background-color: var(--clr-neutral-cream);
@@ -75,43 +78,102 @@ main {
 
 /* CARD HEADER */
 
-.card .header h2 {
+.header h2 {
   font-weight: 700;
   font-size: 1.5em;
 }
 
 /* CARD CHART */
 
+.chart {
+  padding-bottom: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-items: flex-end;
+  height: 14rem;
+  gap: 5px;
+}
+
+.chart div {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  text-align: center;
+  color: var(--clr-neutral-brown-medium);
+  font-size: 0.75em;
+  width: 100%;
+}
+
+.chart div .bar {
+  height: 10rem;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--clr-primary-red);
+  border-radius: 0.5em;
+  margin-bottom: 0.5em;
+  transition-delay: 100ms;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+.chart div .info {
+  background-color: var(--clr-neutral-brown-dark);
+  height: 1.75rem;
+  border-radius: 0.5em;
+  margin-bottom: 0.5em;
+  opacity: 0;
+  transition-delay: 100ms;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+.chart div:hover > .bar {
+  background-color: var(--clr-primary-red-active);
+}
+
+.chart div:hover > .info {
+  opacity: 1;
+}
+
+.chart .highest {
+  background-color: var(--clr-primary-cyan);
+}
+
+.chart .highest:hover {
+  background-color: var(--clr-primary-cyan-active);
+}
+
 /* CARD FOOTER */
 
-.card .footer {
-  border-top: 1px solid var(--cream);
+.footer {
+  border-top: 1px solid var(--clr-neutral-cream);
   padding-top: 20px;
 }
 
-.card .footer h3 {
+.footer h3 {
   font-weight: var(--fw-normal);
   font-size: 0.75em;
   color: var(--clr-neutral-brown-medium);
 }
 
-.card .footer .details {
+.footer .details {
   display: flex;
   justify-content: space-between;
 }
 
-.card .footer .details .total {
-  font-weight: 700;
+.footer .details .total {
+  font-weight: var(--fw-bold);
   font-size: 1.5em;
 }
 
-.card .footer .details .difference {
+.footer .details .difference {
   font-size: 0.75em;
   text-align: right;
   color: var(--clr-neutral-brown-medium);
 }
 
-.card .footer .details .difference .percentage {
+.footer .details .difference .percentage {
   font-weight: var(--fw-bold);
   color: var(--clr-neutral-brown-dark);
 }
