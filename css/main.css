@@ -90,8 +90,7 @@ main {
   display: flex;
   flex-direction: row;
   justify-items: flex-end;
-  height: 14rem;
-  gap: 5px;
+  height: 15rem;
 }
 
 .chart div {
@@ -104,7 +103,7 @@ main {
   width: 100%;
 }
 
-.chart div .bar {
+.chart .month .bar {
   height: 10rem;
   width: 75%;
   margin-left: auto;
@@ -117,9 +116,11 @@ main {
   transition-timing-function: ease-in-out;
 }
 
-.chart div .info {
+.chart .month .info {
   background-color: var(--clr-neutral-brown-dark);
-  height: 1.75rem;
+  color: var(--clr-neutral-orange);
+  font-weight: var(--fw-bold);
+  padding: 0.5rem;
   border-radius: 0.5em;
   margin-bottom: 0.5em;
   opacity: 0;
@@ -128,19 +129,23 @@ main {
   transition-timing-function: ease-in-out;
 }
 
-.chart div:hover > .bar {
+.chart .month:hover {
+  cursor: pointer;
+}
+
+.chart .month:hover > .bar {
   background-color: var(--clr-primary-red-active);
 }
 
-.chart div:hover > .info {
+.chart .month:hover > .info {
   opacity: 1;
 }
 
-.chart .highest {
+.chart .month .bar.highest {
   background-color: var(--clr-primary-cyan);
 }
 
-.chart .highest:hover {
+.chart .month .bar.highest:hover {
   background-color: var(--clr-primary-cyan-active);
 }
 
