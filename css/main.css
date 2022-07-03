@@ -1,7 +1,64 @@
+:root {
+  --clr-primary-red: hsl(10, 79%, 65%);
+  --clr-primary-cyan: hsl(186, 34%, 60%);
+  --clr-neutral-cream: hsl(27, 66%, 92%);
+  --clr-neutral-orange: hsl(33, 100%, 98%);
+  --clr-neutral-brown-dark: hsl(25, 47%, 15%);
+  --clr-neutral-brown-medium: hsl(28, 10%, 53%);
+
+  --ff-primary: "DM Sans", sans-serif;
+
+  --fw-normal: 400;
+  --fw-bold: 700;
+}
+
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body {
+  font-family: var(--ff-primary);
+  background-color: var(--clr-neutral-cream);
+}
+
+main {
+  min-height: 100vh;
+  min-width: 375px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.component {
+  width: min(95%, 25rem);
+}
+
+.balance {
+  color: var(--clr-neutral-orange);
+  background-color: var(--clr-primary-red);
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.balance h3 {
+  font-weight: var(--ff-primary);
+  font-size: 0.75rem;
+}
+
+.balance .amount {
+  font-weight: var(--fw-bold);
+  font-size: 1.5rem;
+}
+
+.balance img {
+  height: 32px;
 }
